@@ -9,15 +9,15 @@ app.get('/', (req, res) => {
   res.json([
     {
       "id":"1",
-      "title":"Book Review: The Bear & The Nightingale"
+      "title":"ပုညခင်: လက်ကျန်လရောင်"
     },
     {
       "id":"2",
-      "title":"Game Review: Pokemon Brillian Diamond"
+      "title":"ဂျာနယ်ကျော်မမလေး: သူလိုလူ"
     },
     {
       "id":"3",
-      "title":"Show Review: Alice in Borderland"
+      "title":"ညီပုလေး: ထက်မြက်သောဓားသွားပေါ်ကချိုမြိန်သောပျားရည်စက်များ"
     }
   ])
 })
