@@ -5,7 +5,7 @@ const app = express()
 
 app.use(cors())
 
-app.get('/', (req, res) => {
+app.get('/user_list', (req, res) => {
   res.json([
     {
       "Name": "Aung Myo Myat...",
