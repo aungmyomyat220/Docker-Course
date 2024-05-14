@@ -8,18 +8,37 @@ app.use(cors())
 app.get('/', (req, res) => {
   res.json([
     {
-      "id":"1",
-      "title":"Book Review: The Name of the Wind"
+      "Name": "Aung Myo Myat",
+      "Email": "aungmyomyat@example.com",
+      "Work": "Programmer"
     },
     {
-      "id":"2",
-      "title":"Game Review: Pokemon Brillian Diamond"
+      "Name": "Htet Aung Htet",
+      "Email": "htetaunghtet@example.com",
+      "Work": "Programmer"
     },
     {
-      "id":"3",
-      "title":"Show Review: Alice in Borderl............."
+      "Name": "Yu Mon Kyaw",
+      "Email": "yumonkyaw@example.com",
+      "Work": "Programmer"
+    },
+    {
+      "Name": "Christina Min",
+      "Email": "christinamin@example.com",
+      "Work": "Programmer"
+    },
+    {
+      "Name": "Dr Nadi Tun Oo",
+      "Email": "drnaditunoo@example.com",
+      "Work": "Programmer"
+    },
+    {
+      "Name": "Min Thant Htet",
+      "Email": "minthanhtet@example.com",
+      "Work": "Programmer"
     }
-  ])
+  ]
+  )
 })
 
 app.listen(4000, () => {
