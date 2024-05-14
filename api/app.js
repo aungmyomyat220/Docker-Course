@@ -8,8 +8,8 @@ app.use(cors())
 app.get('/', (req, res) => {
   res.json([
     {
-      "Name": "Aung Myo Myat",
-      "Email": "aungmyomyat@example.com",
+      "Name": "Aung Myo Myat...",
+      "Email": "aungmyomyat@gmail.com",
       "Work": "Programmer"
     },
     {
