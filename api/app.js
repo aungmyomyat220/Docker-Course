@@ -1,8 +1,10 @@
 const express = require('express')
 const cors = require('cors')
 const {User} = require('./model/model.js')
-
+const bodyParser = require('body-parser');
 const app = express()
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.json());
 
 app.use(cors())
 
@@ -38,7 +40,7 @@ app.post("/create_user", async (req, res) => {
         console.log(userData);
         const newUser = new User(userData);
         await newUser.save();
-      res.send({message:"User Created Succefully"})
+        res.send({message:"User Created Succefully"})
   } catch (error) {
       res.status(500).json({ error: "Error Creating users" });
   }
