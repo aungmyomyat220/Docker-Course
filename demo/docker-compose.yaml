@@ -3,5 +3,5 @@ services:
   java_app:
     build: .
     ports:
-      - 8080:4000
-    container_name: java_container
+      - 8080:8080
+    container_name: java_test_sample_contaier
