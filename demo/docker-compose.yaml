@@ -5,3 +5,5 @@ services:
     ports:
       - 8080:4000
     container_name: java_container
+    volumes:
+      - .:/var
