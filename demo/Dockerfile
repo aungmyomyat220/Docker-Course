@@ -1,19 +1,18 @@
-FROM openjdk:21 AS base
+ARG MVN_VERSION=3.8.3
+ARG JDK_VERSION=17
 
-FROM maven:3.8.4-openjdk-17 AS build
-
-WORKDIR /app
-
+FROM maven:${MVN_VERSION}-openjdk-${JDK_VERSION}-slim as MAVEN_TOOL_CHAIN_CACHE
+WORKDIR /build
 COPY pom.xml .
-RUN mvn dependency:go-offline
+RUN mvn dependency:tree
 
-COPY src ./src
+COPY ./pom.xml /tmp/
+COPY ./src /tmp/src/
+WORKDIR /tmp/
 RUN mvn clean install
 
-FROM openjdk:21 AS runtime
+FROM openjdk:17-alpine
 
-COPY --from=build /app/target/demo-0.0.1-SNAPSHOT.jar /app/app.jar
+COPY --from=MAVEN_TOOL_CHAIN_CACHE /tmp/target/demo-0.0.1-SNAPSHOT.jar /demo-0.0.1-SNAPSHOT.jar
 
-EXPOSE 4000
-
-CMD ["java", "-jar", "/app/app.jar"]
+ENTRYPOINT ["java", "-jar", "/demo-0.0.1-SNAPSHOT.jar"]
