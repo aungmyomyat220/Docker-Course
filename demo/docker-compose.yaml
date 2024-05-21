@@ -3,5 +3,5 @@ services:
   java_app:
     build: .
     ports:
-      - 3000:8080
-    container_name: java_container
+      - 3000:8000
+    container_name: java_api
